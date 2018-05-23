@@ -1,9 +1,9 @@
 # go-smart-config
 
-这是一个【零配置】的配置文件加载模块和命令行参数处理模块
+这是一个**零配置**的配置文件加载模块和命令行参数处理模块
 
-本模块中使用了 cobra 做命令行参数解析（当然主要是用的是 pflag）
-并且通过 viper 绑定了配置文件支持。
+本模块中使用了 [cobra][] 做命令行参数解析（当然主要是用的是 [pflag][]）
+并且通过 [viper][] 绑定了配置文件支持。
 
 ## 主要特性
 
@@ -163,8 +163,6 @@ func main() {
 }
 ```
 
-## 更多内容参见
-
-1. https://github.com/spf13/cobra
-2. https://github.com/spf13/viper
-3. https://github.com/spf13/pflag
+[cobra]: https://github.com/spf13/cobra
+[pflag]: https://github.com/spf13/pflag
+[viper]: https://github.com/spf13/viper
