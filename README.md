@@ -1,4 +1,4 @@
-# go-smart-config
+# go-smartConfig
 
 这是一个**零配置**的配置文件加载模块和命令行参数处理模块
 
@@ -32,20 +32,20 @@
 ## 安装方法
 
 ```shell
-go get -u "github.com/flw-cn/go-smart-config"
+go get -u "github.com/flw-cn/go-smartConfig"
 ```
 
 ## 使用方法
 
-导入模块:
+导入模块：
 
 ```go
 import (
-    smartConfig "github.com/flw-cn/go-smart-config"
+    "github.com/flw-cn/go-smartConfig"
 )
 ```
 
-声明你的配置信息数据结构:
+声明你的配置信息数据结构：
 
 ```go
 type ServiceOneConfig struct {
@@ -69,7 +69,7 @@ type MainConfig struct {
 }
 ```
 
-加载配置:
+加载配置：
 
 ```go
 config := &MainConfig{}
@@ -86,7 +86,7 @@ case <-smartConfig.ConfigChanged():
 
 ```
 
-定制 struct tag key 名称:
+定制 struct tag key 名称：
 
 ```go
 type ServiceOneConfig struct {
@@ -107,7 +107,7 @@ import (
     "fmt"
     "time"
 
-    smartConfig "github.com/flw-cn/go-smart-config"
+    smartConfig "github.com/flw-cn/go-smartConfig"
 )
 
 // 实际应用中建议将 ServiceOneConfig 等类型的定义放到具体的业务模块当中

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	smartConfig "github.com/flw-cn/go-smart-config"
+	"github.com/flw-cn/go-smartConfig"
 )
 
 // 实际应用中建议将 ServiceOneConfig 等类型的定义放到具体的业务模块当中
