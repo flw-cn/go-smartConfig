@@ -36,6 +36,7 @@ type MainConfig struct {
 
 func main() {
 	config := &MainConfig{}
+	smartConfig.VersionDetail = "a\nlong\nlong\nversion\ndetail"
 	smartConfig.LoadConfig("example", "1.0", config)
 
 	fmt.Printf("config: %#v\n", config)

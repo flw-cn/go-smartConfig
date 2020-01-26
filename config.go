@@ -17,12 +17,15 @@ import (
 )
 
 var (
-	// 默认的 struct tag key，本模块据此从 struct tag 中寻找需要的配置
+	// StructTagKey 用来从 struct tag 中提取 smartConfig 的配置项，默认为 `flag`
 	// 例如:
 	// type Config struct {
 	//     Foo string    `flag:"...Foo 字段的命令行选项属性..."`
 	// }
 	StructTagKey string = "flag"
+
+	// VersionDetail 是 app 版本的详细信息，用作 --versoin 的输出。如不提供，则只输出版本号。
+	VersionDetail string = ""
 )
 
 var (
@@ -71,7 +74,11 @@ func LoadConfig(name string, version string, config interface{}) {
 	if err != nil || *optHelp {
 		os.Exit(0)
 	} else if *optVersion {
-		fmt.Fprintf(os.Stderr, "%s\n", version)
+		if VersionDetail == "" {
+			fmt.Fprintf(os.Stderr, "%s\n", version)
+		} else {
+			fmt.Fprintf(os.Stderr, "%s\n", VersionDetail)
+		}
 		os.Exit(0)
 	} else if *optWriteYAML {
 		out, err := yaml.Marshal(config)
