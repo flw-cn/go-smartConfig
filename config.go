@@ -58,7 +58,7 @@ func LoadConfig(name string, version string, config interface{}) {
 
 	flags.StringVarP(&configFile, "config", "c", "", "config `FILENAME`, default to `config.yaml` or `config.json`")
 	optVersion := flags.Bool("version", false, "just print version number only")
-	optHelp := flags.Bool("help", false, "show this message")
+	optHelp := flags.BoolP("help", "h", false, "show this message")
 
 	optWriteYAML := flags.Bool("gen-yaml", false, "generate config.yaml")
 	optWriteJSON := flags.Bool("gen-json", false, "generate config.json")
