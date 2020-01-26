@@ -75,9 +75,9 @@ func LoadConfig(name string, version string, config interface{}) {
 		os.Exit(0)
 	} else if *optVersion {
 		if VersionDetail == "" {
-			fmt.Fprintf(os.Stderr, "%s\n", version)
+			fmt.Fprintf(os.Stderr, "%s\n", strings.Trim(version, "\t \r\n"))
 		} else {
-			fmt.Fprintf(os.Stderr, "%s\n", VersionDetail)
+			fmt.Fprintf(os.Stderr, "%s\n", strings.Trim(VersionDetail, "\t \r\n"))
 		}
 		os.Exit(0)
 	} else if *optWriteYAML {
