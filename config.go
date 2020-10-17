@@ -90,7 +90,7 @@ func LoadConfig(name string, version string, config interface{}) {
 		os.Exit(0)
 	} else if *optWriteJSON {
 		encoder := json.NewEncoder(os.Stdout)
-		encoder.SetIndent("", "    ")
+		encoder.SetIndent("", "  ")
 		encoder.Encode(config)
 		os.Exit(0)
 	}
